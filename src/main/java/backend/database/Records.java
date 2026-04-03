@@ -25,6 +25,8 @@ public class Records {
     private String description;
 
     private int adminId;
+    @Column(nullable = false, updatable = false)
+    private String accountNo;
 
     public Records() {
     }
@@ -90,5 +92,13 @@ public class Records {
 
     public void setAdminId(int adminId) {
         this.adminId = adminId;
+    }
+
+    public String getAccountNo() {
+        return accountNo;
+    }
+
+    public void setAccountNo(String accountNo) {
+        this.accountNo = accountNo;
     }
 }
