@@ -60,6 +60,7 @@ Make sure you have installed:
 ```bash
 git clone https://github.com/your-username/Finance_Dashboard_Backend.git
 cd Finance_Dashboard_Backend
+```
 
 ## 2. CREATE DATABASE financedb;
 
