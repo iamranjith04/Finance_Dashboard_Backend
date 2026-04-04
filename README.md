@@ -43,6 +43,30 @@ A **Spring Boot–based backend application** for managing a finance dashboard. 
 
 ---
 
+## ⚙️ How to Run the Project
+
+### 🔧 Prerequisites
+
+Make sure you have installed:
+
+- Java 17+
+- Maven
+- PostgreSQL
+
+---
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/Finance_Dashboard_Backend.git
+cd Finance_Dashboard_Backend
+
+## 2. CREATE DATABASE financedb;
+
+## 3. Configure Environment Variables
+
+## 4. Run the Application
+
 
 
 
