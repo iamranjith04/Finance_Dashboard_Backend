@@ -64,7 +64,7 @@ cd Finance_Dashboard_Backend
 
 ### 2. CREATE DATABASE financedb;
 
-### 3. Configure Environment Variables
+### 3. Configure .env Variables
 
 ### 4. Run the Application
 
