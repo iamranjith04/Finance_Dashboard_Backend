@@ -43,26 +43,6 @@ A **Spring Boot–based backend application** for managing a finance dashboard. 
 
 ---
 
-## Project Structure
-Finance/
-│── pom.xml
-│
-└── src/
-├── main/
-│ ├── java/
-│ │ └── backend/
-│ │ ├── controller/
-│ │ ├── database/
-│ │ │ └── enums/
-│ │ ├── dto/
-│ │ ├── repository/
-│ │ ├── security/
-│ │ │ └── component/
-│ │ └── service/
-│ │
-│ └── resources/
-│
-└── test/
-└── java/
+
 
 
