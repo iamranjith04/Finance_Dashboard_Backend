@@ -62,12 +62,17 @@ git clone https://github.com/your-username/Finance_Dashboard_Backend.git
 cd Finance_Dashboard_Backend
 ```
 
-## 2. CREATE DATABASE financedb;
+### 2. CREATE DATABASE financedb;
 
-## 3. Configure Environment Variables
+### 3. Configure Environment Variables
 
-## 4. Run the Application
+### 4. Run the Application
 
+---
+
+## API Documentation
+
+Detailed API documentation is available in ```API_Documentation.docx```
 
 
 
