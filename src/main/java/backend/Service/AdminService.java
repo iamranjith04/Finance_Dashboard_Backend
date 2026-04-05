@@ -48,6 +48,11 @@ public class AdminService {
         return "User Added successfully";
     }
 
+    public List<UsersData> getUsers(String username){
+        int AdminUserId=userDataRepo.findUsersDataByName(username).getUserId();
+        return userDataRepo.findUsersDataByCreator_UserId(AdminUserId);
+    }
+
     public String deleteUser(int userId, String requestingAdminName) {
         Optional<UsersData> targetOpt = userDataRepo.findById(userId);
         if (targetOpt.isEmpty()) {

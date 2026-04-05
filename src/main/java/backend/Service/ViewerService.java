@@ -12,6 +12,7 @@ import backend.dto.CategoryInsight;
 import backend.dto.DashboardInsight;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Comparator;
 import java.util.List;
@@ -82,7 +83,7 @@ public class ViewerService {
                 .collect(Collectors.toList());
     }
 
-
+    @Transactional
     public Object getNetBalance(String username) {
         UsersData admin = resolveAdmin(username);
 

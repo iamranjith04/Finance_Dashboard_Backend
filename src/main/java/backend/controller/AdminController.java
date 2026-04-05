@@ -1,6 +1,7 @@
 package backend.controller;
 
 import backend.Service.AdminService;
+import backend.database.UsersData;
 import backend.dto.AddRecordRequest;
 import backend.dto.AddUserRequest;
 import backend.dto.UpdateRecordRequest;
@@ -9,6 +10,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @RestController
@@ -33,6 +36,7 @@ public class AdminController {
         String role = extractRole(auth);
 
         if (!"ROLE_ADMIN".equals(role)) {
+            System.out.println(role);
             return ResponseEntity.status(403).body("Required Admin credentials to access");
         }
 
@@ -41,6 +45,24 @@ public class AdminController {
             return ResponseEntity.status(400).body(response);
         }
         return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/getUsers")
+    public  ResponseEntity<?> getUsers(){
+        Authentication auth = getAdminAuth();
+        if (auth == null) {
+            return ResponseEntity.status(403).body("Invalid credentials. Login/signUp again to access");
+        }
+        String role = extractRole(auth);
+        if (!"ROLE_ADMIN".equals(role)) {
+            return ResponseEntity.status(403).body("Required Admin credentials to access");
+        }
+        String username = auth.getName();
+        List<UsersData> response=adminService.getUsers(username);
+        if(response.isEmpty()){
+            return ResponseEntity.ok().body("No users found");
+        }
+        return ResponseEntity.ok().body(response);
     }
 
     @DeleteMapping("/deleteUser/{userId}")

@@ -10,7 +10,8 @@ import java.time.LocalDateTime;
 public class Records {
 
     @Id
-    private long recordI;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long recordId;
 
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
@@ -25,8 +26,8 @@ public class Records {
     private String description;
 
     private int adminId;
-    @Column(nullable = false, updatable = false)
-    private String accountNo;
+    @Column( nullable = false, updatable = false)
+    private String account_no;
 
     public Records() {
     }
@@ -39,11 +40,11 @@ public class Records {
     }
 
     public long getRecordI() {
-        return recordI;
+        return recordId;
     }
 
     public void setRecordI(long recordI) {
-        this.recordI = recordI;
+        this.recordId = recordI;
     }
 
     public LocalDateTime getCreatedAt() {
@@ -95,10 +96,10 @@ public class Records {
     }
 
     public String getAccountNo() {
-        return accountNo;
+        return account_no;
     }
 
     public void setAccountNo(String accountNo) {
-        this.accountNo = accountNo;
+        this.account_no = accountNo;
     }
 }

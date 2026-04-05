@@ -29,7 +29,7 @@ public class JWTutil {
     public String generateToken(String username, String role) {
 
         Map<String, Object> claims = new HashMap<>();
-        claims.put("role", role);
+        claims.put("role", role.toUpperCase());
 
         return createToken(claims, username);
     }

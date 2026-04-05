@@ -1,6 +1,7 @@
 package backend.database;
 
 import backend.database.enums.UserRoles;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
@@ -13,12 +14,15 @@ public class UsersData {
 
     @Column(nullable = false)
     private String name;
+
+    @JsonIgnore
     @Column(nullable = false)
     private String password;
 
     @Enumerated(EnumType.STRING)
     private UserRoles role;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "creator_id")
     private UsersData creator;
@@ -72,6 +76,11 @@ public class UsersData {
         this.creator = creator;
     }
 
+    public String getName() {
+        return name;
+    }
 
-
+    public void setName(String name) {
+        this.name = name;
+    }
 }
