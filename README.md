@@ -72,7 +72,7 @@ cd Finance_Dashboard_Backend
 
 ## API Documentation
 
-Detailed API documentation is available in ```API_Documentation.docx```
+Detailed API documentation is available in https://documenter.getpostman.com/view/47284341/2sBXiqE8ca
 
 
 
